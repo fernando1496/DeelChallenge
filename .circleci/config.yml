@@ -2,11 +2,13 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/node:20.5.0
+      - image: cimg/openjdk:20.0.1
     steps:
       - checkout
       - run:
           command: |
+            sudo apt install nodejs
+            sudo apt install npm
             npm install
             npx playwright install chrome
             sudo npm install -g allure-commandline
