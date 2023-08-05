@@ -4,12 +4,6 @@ jobs:
     docker:
        # Use the official CircleCI Node.js image
       - image: circleci/node:latest-browsers
-      # Add another image for Allure
-      - image: allureframework/allure2:latest
-        
-        auth:
-          username: ${DOCKER_USERNAME}
-          password: ${DOCKER_PASSWORD}
 
     steps:
       - checkout
@@ -23,6 +17,7 @@ jobs:
             java -version
 
       - run:
+          name: Install dependencies
           command: |
             npm install
             npx playwright install chrome
