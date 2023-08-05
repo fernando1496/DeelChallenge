@@ -8,6 +8,7 @@ jobs:
       - image: allureframework/allure2:latest
     steps:
       - checkout
+
       - run:
           command: |
             npm install
@@ -28,5 +29,10 @@ jobs:
 
       - store_artifacts:
             path: /home/circleci/project/allure-report
+
+    environment:
+      # Use the environment variables for Docker Hub credentials
+        DOCKER_LOGIN: ${DOCKER_USERNAME}
+        DOCKER_PASSWORD: ${DOCKER_PASSWORD}
 
           
