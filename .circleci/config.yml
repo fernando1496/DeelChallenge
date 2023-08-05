@@ -2,14 +2,14 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: cimg/openjdk:20.0.1
+       # Use the official CircleCI Node.js image
+      - image: circleci/node:latest-browsers
+      # Add another image for Allure
+      - image: allureframework/allure2:latest
     steps:
       - checkout
       - run:
           command: |
-            sudo apt-get install -y nodejs
-            sudo apt-get install -y build-essential
-            sudo apt install npm
             npm install
             npx playwright install chrome
             sudo npm install -g allure-commandline
