@@ -9,6 +9,7 @@ jobs:
           command: |
             npm install
             npx playwright install chrome
+            npm install -g allure-commandline
 
       - run:
           name: Running tests
