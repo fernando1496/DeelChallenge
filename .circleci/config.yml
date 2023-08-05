@@ -8,8 +8,8 @@ jobs:
       - image: allureframework/allure2:latest
         
         auth:
-          username: $DOCKER_LOGIN
-          password: $DOCKER_PASSWORD
+          username: ${DOCKER_USERNAME}
+          password: ${DOCKER_PASSWORD}
 
     steps:
       - checkout
