@@ -6,6 +6,11 @@ jobs:
       - image: circleci/node:latest-browsers
       # Add another image for Allure
       - image: allureframework/allure2:latest
+        
+        auth:
+          username: $DOCKER_LOGIN
+          password: $DOCKER_PASSWORD
+
     steps:
       - checkout
 
