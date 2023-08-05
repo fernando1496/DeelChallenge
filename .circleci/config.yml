@@ -1,0 +1,18 @@
+version: 2.1
+jobs:
+  build:
+    docker:
+      - image: cimg/python:3.10.1
+    steps:
+      - checkout
+      - run:
+          command: |
+            npm install
+
+      - run:
+          name: Running tests
+          no_output_timeout: 180m
+          command: |
+            npx playwright test --project="Google Chrome"
+
+          
