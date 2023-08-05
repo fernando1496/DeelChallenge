@@ -8,6 +8,7 @@ jobs:
       - run:
           command: |
             npm install
+            npx playwright install chrome
 
       - run:
           name: Running tests
